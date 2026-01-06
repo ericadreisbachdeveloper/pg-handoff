@@ -82,7 +82,7 @@ https://app.asana.com/1/1166973237627545/project/1166973102232817/task/121102400
 
 **Quirks + Important Context** 
 - Footer Privacy Policy links are outbound links to PDFs hosted on HubSpot
-- Acelpa is part of a wider pharmacy acquisition network, similar to PG's private equity clients. This website was an exception to work for this client where PG created a site from the ground up rather than bring an existing site in line with the wider network brand guidelines. 
+- Acelpa is part of a wider pharmacy acquisition network, similar to PG's private equity clients. The acelpahealth.com site was an exception for this client, in that PG created a site from the ground up rather than integrated brand style into an acquisition website (cf https://hisprx.com). 
 
 
 
@@ -174,66 +174,81 @@ pw: bernies
 
 
 ## <a id="carow"></a>Carow Packaging 
+<img src="./img/carow-home.png" style="margin-bottom: 1.414rem;">
 
 **URL:** https://carowpackaging.com/
 
-**Development URL:** https://carowpackagstg.wpenginepowered.com/ 
+**Development URL:** https://carowpackagstg.wpenginepowered.com/
 
-**History + Status:** 
+**History + Status:** Site migrated from a HubSpot build to WordPress in (July 2024???). Enfold child theme build by erica dreisbach. 
 
-**Hosting:** 
+**Hosting:** WP Engine
+
+**DNS:** ??? Client has ?? 
+
+**Analytics**
+- Google Analytics 
+- Google Tag Manager 
 
 **Contacts**
-- 
-- 
+- Client: ??? 
+- PG Accounts: Mahek Lakhani mahek@peppergroup.com  
+- PG Tech Lead: 
+- PG Tech Backup:  
+- PG Design Lead: Joe Whittington joseph@peppergroup.com  
+
+**Internal Project Assets**
+- Egnyte: 
+- Asana: 
 
 **Repositories**
-- Production
-- Staging
-- Github
+- Production: 
+- Staging: 
+- Github: 
 
 **Tech Stack Notes** 
-- 
+- Uses Essential Grid for blog posts and products 
+- Uses Google reCAPTCHA v3 to secure the site at large
+- Forms built with Gravity Forms
 
-**Ongoing Issues / Tech Debt**
-- 
+**Recurring Tasks**
+- Site receives monthly maintenance from PG
+
+**Known Issues / Tech Debt**
+- Product sorting is unfortunately limited to a blanket AND or OR Boolean logic, which makes for confusing UI. Essential 
+- At some browser heights, top frame cuts off Google reCAPTCHA badge in the lower right corner; screenshot below from Chrome on a retina Mac, 1692 pixels high: 
+
+![Google reCAPTCHA badge cut off on some desktop viewports](./img/carow-recaptcha-badge-cut-off.png)
+
+**Quirks + Important Context** 
+- This particular Enfold child build seems particularly vulnerable to not generating CSS on-the-fly; frequently after monthly updates, homepage content does not wrap properly on desktop. CSS consistently properly regenerates upon saving the homepage from the Page Edit screen. 
 
 
 
 ## CSPRx 
 
-- Client tends to run third-party tech reports (Screaming Frog report run by a firm called Taco, accessiBe accessibility reports) that are then sent to PG as a punchlist for site updates 
-- Site has a standalone Envoy portal airgapped from the WordPress build for sensitive individual patient and provider login https://portal.csprx.com/login/ 
+<img src="./img/csprx-home.png" style="margin-bottom: 1.414rem;">
 
+**URL:** https://csprx.com/ 
 
-## DeliverHealth 
+**Development URL:** https://californiaspe2.wpenginepowered.com/
 
+**History + Status:** Inherited build using Divi and assorted Divi add-ons. Significant pushes toward improving accessibility and UI in ____ and ____. 
 
+**Hosting:** WP Engine 
 
-## EnviroServe 
-
-**URL:** https://enviroserve.com/ 
-
-**Staging URL:** https://enviroserv1stg.wpenginepowered.com/ 
-
-**Archive Legacy URL:** https://enviroservedev.wpenginepowered.com/ <br>
-un: enviroservedev<br>
-pw: enviroservedev
-
-**History + Status:** 
-
-**Hosting:** WP Engine https://my.wpengine.com/installs/enviroserve
+**DNS:** Client has access. 
 
 **Analytics**
 -
 -
 
 **Contacts**
-- Client: 
-- PG Accounts: Miranda Steczak miranda@peppergroup.com
-- PG Tech Lead: erica dreisbach erica@peppergroup.com 
-- PG Tech Backup: McCade Freeman mccade@peppergroup.com 
-- PG Design Lead: co-designed by Brian Erickson brian@peppergroup.com and Joe Whittington joseph@peppergroup.com 
+- Client: Brittany ____ 
+- PG Accounts: Eliza Uhland eliza@peppergroup.com 
+- PG Tech Lead:
+- PG Tech Backup:  
+- PG Design Lead: 
 
 **Internal Project Assets**
 - Egnyte
@@ -254,7 +269,104 @@ pw: enviroservedev
 - 
 
 **Quirks + Important Context** 
+- Client has a history of running third-party tech reports (Screaming Frog report run by a firm called Taco, accessiBe accessibility reports) that are then sent to PG as a punchlist for site updates 
+- Site has a standalone Envoy portal airgapped from the WordPress build, used for sensitive individual patient and provider logins https://portal.csprx.com/login/ 
+
+
+## DeliverHealth 
+
+<img src="./img/deliverhealth-home.png" style="margin-bottom: 1.414rem;">
+
+**URL:** https://deliverhealth.com/esone-instanote/ 
+
+**Development URL:** https://ai.deliverhealth.com/ 
+
+**History + Status:** In ____ PG developed a handful of lovely landing pages on client's WordPress site using Gravity Forms and Calendly. In ___ Client transitioned nearly all site content to an AI-generated build on Lovable.  
+
+**Hosting:**  ???
+
+**DNS:** Client has access 
+
+**Analytics**
+- Google Analytics 
+- Google AdSense (SEO team has access)
+
+**Contacts**
+- Client: 
+- PG Accounts: Eliza Uhland eliza@peppergroup.com  
+- PG Tech Lead:
+- PG Tech Backup:  
+- Legacy Tech: Ben @ Hagonetech 
+
+**Internal Project Assets**
+- Egnyte
+- Asana
+
+**Repositories**
+- Production
+- Staging
+- Github
+
+**Tech Stack Notes** 
 - 
+
+**Recurring Tasks**
+- 
+
+**Known Issues / Tech Debt**
+- 
+
+**Quirks + Important Context** 
+- If working on the Lovable site, beware using 
+
+
+## EnviroServe 
+
+**URL:** https://enviroserve.com/ 
+
+**Staging URL:** https://enviroserv1stg.wpenginepowered.com/ 
+
+**Archive Legacy URL:** https://enviroservedev.wpenginepowered.com/ <br>
+un: enviroservedev<br>
+pw: enviroservedev
+
+**History + Status:** 
+
+**Hosting:** WP Engine https://my.wpengine.com/installs/enviroserve
+
+**Analytics**
+- Google Analytics 
+-
+
+**Contacts**
+- Client: _____???? 
+- PG Accounts: Miranda Steczak miranda@peppergroup.com
+- PG Tech Lead: erica dreisbach erica@peppergroup.com 
+- PG Tech Backup: McCade Freeman mccade@peppergroup.com 
+- PG Design Lead: co-designed by Brian Erickson brian@peppergroup.com and Joe Whittington joseph@peppergroup.com 
+
+**Internal Project Assets**
+- Egnyte
+- Asana
+
+**Repositories**
+- Production
+- Staging
+- Github
+
+**Tech Stack Notes** 
+- 
+
+**Recurring Tasks**
+- Receives monthly site maintenace. 
+
+**Known Issues / Tech Debt**
+- This site, alone among known PG sites to date, required special attention to Google Analytics in order to properly trigger pageviews. Google Analytics Pageviews from the August 2024 launch through ____ are lost. Specialty JavaScript to manually ensure pageview event is triggered included in _____. 
+- Google Maps on Locations page connected to a non-PG Google account; unclear if this is client's Google account or a prior developer's. Map views as of December 2025 are well below the threshold that would trigger payment. 
+
+**Quirks + Important Context** 
+- The legacy EnviroServe automatically generated coordinates for new locations upon entering into the page editor. The redesigned site as of 2024 requires manual entry of location coordinates, which can be readily pulled from Google Maps. 
+- Client uses a third-party service LocalIQ to improve engagement. LocalIQ's widget is added in _____. 
 
 
 
@@ -350,17 +462,21 @@ pw: enviroservedev
 
 
 
+# Permatron
 
 
-<img src="./img/bernies-home.png" style="margin-bottom: 1.414rem;">
+
+# Robertshaw
 
 **URL:**
+
+**Staging URL:** 
 
 **Development URL:** 
 
 **History + Status:** 
 
-**Hosting:** 
+**Hosting:** WP Engine - https://my.wpengine.com/installs/robertshaw1 
 
 **DNS:** 
 
@@ -369,11 +485,68 @@ pw: enviroservedev
 -
 
 **Contacts**
-- Client: 
-- PG Accounts: 
+- Client: ____ 
+- Client Technical Contact: Octavio 
+- PG Accounts: Grace Rodi grace@peppergroup.com 
+- PG Tech Lead: erica dreisbach erica@peppergroup.com 
+- Additional Tech: Brian Royer brian@soundwebmedia.com 
+- PG Tech Backup: McCade Freeman mccade@peppergroup.com 
+- PG Design Lead: Brian Erickson brian@peppergroup.com 
+
+**Internal Project Assets**
+- Egnyte
+- Asana
+
+**Repositories**
+- Production
+- Staging
+- Github
+
+**Tech Stack Notes** 
+- The main contact form is an HTML widget connected directly to client's SalesForce CRM
+- Landing pages use HubSpot forms secured with a HubSpot Google reCAPTCHA 
+- Landing page for China uses an HTML HubSpot form secured with hCAPTCHA 
+- Document Library uses the FacetWP plugin 
+
+**Recurring Tasks**
+- Receives monthly site maintenance 
+
+**Known Issues / Tech Debt**
+- Main contact form does not properly validate reCAPTCHA responses 
+
+**Quirks + Important Context** 
+- 
+
+
+# Sensience 
+
+<img src="./img/sensience-home.png" style="margin-bottom: 1.414rem;">
+
+**URL:** https://www.sensience.com/ 
+
+**Testing URL:** https://test-sensience.pantheonsite.io/ 
+
+**Development URL:** https://dev-sensience.pantheonsite.io/ 
+
+**History + Status:** 
+
+**Hosting:** Pantheon - https://dashboard.pantheon.io/workspace/369dec37-483d-464d-bda6-0046361ce900/cms-site/624b3c2b-7151-48e4-bd52-f1f9555eff5c
+
+**DNS:** Managed in Pantheon 
+
+**Analytics**
+- Google Analytics 
+- Google Tag Manager 
+
+**Contacts**
+- Client:  ????
+- Client Technical Contact: 
+- PG Accounts: Mahek Lakhani mahek@peppergroup.com 
 - PG Tech Lead:
 - PG Tech Backup:  
 - PG Design Lead: 
+- Third Party Technical Contact: 
+
 
 **Internal Project Assets**
 - Egnyte
@@ -391,24 +564,13 @@ pw: enviroservedev
 - 
 
 **Known Issues / Tech Debt**
-- 
+- Site uses the Enfold-packaged cookie notice, including preference settings for Google fonts, but these settings are not actually connected to front end tech and the cookie notice would not hold up to legal or technical scrutiny 
+- Global Locations page uses the Enfold-default hotspot module which has poor accessibility and UI 
+- Site overall has known accessibility support (keyboard access, color contrast)
 
 **Quirks + Important Context** 
-- 
+- In ____ site contact forms transitioned to Gravity Forms connected to ____. 
 
-
-# Permatron
-
-
-
-# Robertshaw
-
-**Hosting:** WP Engine - https://my.wpengine.com/installs/robertshaw1 
-
-
-# Sensience 
-
-**Hosting:** Pantheon - https://dashboard.pantheon.io/workspace/369dec37-483d-464d-bda6-0046361ce900/cms-site/624b3c2b-7151-48e4-bd52-f1f9555eff5c
 
 
 ----------
