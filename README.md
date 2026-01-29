@@ -17,6 +17,7 @@
 - [Kensing Solutions](#kensing)
 - [Permatron](#permatron)
 - [Robertshaw](#robertshaw)
+- [Schebler Spec Fab](#scheblerspecfab)
 
 **Legacy Projects**
 - [ArchKey Solutions](#archkey)
@@ -45,9 +46,9 @@
 **DNS:** GoDaddy - Client has access
 
 **Analytics**
-- <a href="https://tagmanager.google.com/#/container/accounts/6293029069/containers/218873956/workspaces/4">Google Analytics</a>
-- <a href="https://search.google.com/search-console?resource_id=https%3A%2F%2Facelpahealth.com%2F">Google Search Console</a>
-- <a href="https://tagmanager.google.com/#/container/accounts/6293029069/containers/218873956/workspaces/4">Google Tag Manager</a>
+- <a href="https://tagmanager.google.com/#/container/accounts/6293029069/containers/218873956/workspaces/4" target="_blank" rel="noopener">Google Analytics</a>
+- <a href="https://search.google.com/search-console?resource_id=https%3A%2F%2Facelpahealth.com%2F" target="_blank" rel="noopener">Google Search Console</a>
+- <a href="https://tagmanager.google.com/#/container/accounts/6293029069/containers/218873956/workspaces/4" target="_blank" rel="noopener">Google Tag Manager</a>
 
 **Contacts** 
 - Client: Brittany Lett Brittany.Lett@csprx.com
@@ -69,7 +70,7 @@
 **Tech Stack Notes** 
 - Site forms built with HubSpot 
 - Site uses the Web Accessibility by accessiBe plugin to power the front end accessiBe widget 
-- Locations page uses Storepoint map that uses websites@peppergroup.com for login to Client's Google Account for payment; credentials in Keeper 
+- Locations page uses Storepoint map that uses websites@peppergroup.com for login to Client's Google Account for payment; client Storepoint credentials available in Keeper 
 
 **Recurring Tasks**
 - Monthly Storepoint receipts comes to websites@peppergroup.com for charges related to the Locations page (map feature) https://acelpahealth.com/locations/  Receipts should be forwarded to lynn@peppergroup.com and cc'ed to eliza@peppergroup.com with the note: 
@@ -102,7 +103,7 @@ pw: bernies
 
 **Hosting:** WP Engine https://my.wpengine.com/installs/berniesbookbnk
 
-**DNS:** Cloudflare - Client has access
+**DNS:** Cloudflare - Client IT has access
 
 **Analytics**
 - <a href="https://analytics.google.com/analytics/web/#/a354624040p488535554/reports/dashboard?params=_u..nav%3Dmaui%26_u..comparisons%3D%5B%7B%22savedComparisonId%22:%227512949286%22,%22name%22:%22All%20Users%22,%22isEnabled%22:true,%22filters%22:%5B%5D,%22systemDefinedSavedComparisonType%22:8,%22isSystemDefined%22:true%7D,%7B%22savedComparisonId%22:%227512949279%22,%22name%22:%22Direct%20traffic%22,%22isEnabled%22:true,%22filters%22:%5B%7B%22fieldName%22:%22sessionDefaultChannelGrouping%22,%22expressionList%22:%5B%22Direct%22%5D,%22isCaseSensitive%22:true%7D%5D,%22systemDefinedSavedComparisonType%22:1,%22isSystemDefined%22:true%7D,%7B%22savedComparisonId%22:%227512949280%22,%22name%22:%22Organic%20traffic%22,%22isEnabled%22:true,%22filters%22:%5B%7B%22fieldName%22:%22sessionDefaultChannelGrouping%22,%22evaluationType%22:8,%22expressionList%22:%5B%22Organic%20Search%22,%22Organic%20Video%22,%22Organic%20Social%22,%22Organic%20Shopping%22%5D,%22isCaseSensitive%22:true%7D%5D,%22systemDefinedSavedComparisonType%22:2,%22isSystemDefined%22:true%7D,%7B%22savedComparisonId%22:%227512949282%22,%22name%22:%22Referral%20%2526%20affiliates%20traffic%22,%22isEnabled%22:true,%22filters%22:%5B%7B%22fieldName%22:%22sessionDefaultChannelGrouping%22,%22evaluationType%22:8,%22expressionList%22:%5B%22Referral%22,%22Affiliates%22%5D,%22isCaseSensitive%22:true%7D%5D,%22systemDefinedSavedComparisonType%22:4,%22isSystemDefined%22:true%7D%5D%26_u.dateOption%3Dlast28Days%26_u.comparisonOption%3Ddisabled&ruid=lifecycle-engagement-overview,life-cycle,engagement&collectionId=12121653004&r=lifecycle-engagement-overview" target="_blank" rel="noopener">Google Analytics - BBB GA4</a>
@@ -143,7 +144,7 @@ pw: bernies
     - subhead (`<h2>` styling as defined in this build)
     - subsubhead (`<h3>` styling as defined in this build)
     - button (style a link to look like a button)
-- Uses a Storepoint embedded map linked to client's Google Account 
+- Uses a Storepoint embedded map connect to client's Google Cloud Account; Storepoint credentials for websites@peppergroup.com in Keeper 
 - Uses an &ldquo;Opt Out&rdquo; cookie notice powered by CookieYes
 - Rotating image in desktop pre-footer section powered by a custom-built module using Advanced Custom Fields Pre-Footer Images repeater field and `/inc/random-images.php`
 
@@ -152,13 +153,12 @@ pw: bernies
 
 **Known Issues / Tech Debt**
 - FormStack iframe embeds include hard-coded max-height; if client adds or removes fields from within their FormStack interface, the form's max-height should be adjusted within the **Code** block 
-
 ![iframe with max-height](./img/bernies-hardcoded-maxheight.png)
-- Client's Formstack default settings include placeholder spaces in the Firstname and Lastname fields, which then become bad data in client's CRM; for ease and speed of development, form fields are cleared with JavaScript after the form loads, cf `./assets/jas/clear-formstack-names.js` 
+- Client's Formstack default settings include placeholder spaces in the Firstname and Lastname fields, which can then become bad data in client's CRM (a hard-coded space); for ease and speed of development, form fields are cleared with JavaScript after the form loads, cf `./assets/jas/clear-formstack-names.js` 
 - Internal anchor links to FAQ sections were prone to "not scroll to anchor." As a workaround, monstrous JavaScript in the theme waits for page load and ensures subsequent smooth scroll to FAQ sections: `./assets/forced-anchors.js` 
 - Site build uses Schema markup in template files to optimize search surfacing Events and Blog Posts
-- Events requries manual updates in ACF for display (cf 
-- Schema for Events included only on Chapter pages, as launch date was prioritized over adding development to accommodate the complexity of events with multiple locations and dates 
+- Events requre manual updates in ACF for display 
+- Schema for Events included only on Chapter pages to avoid dealing with the complexity of events with multiple locations and dates 
     - https://www.berniesbookbank.org/chicagoland/ 
     - https://www.berniesbookbank.org/greater-milwaukee/ 
     - https://www.berniesbookbank.org/florida-suncoast/ 
@@ -168,7 +168,7 @@ pw: bernies
 ![Bernie's Book Lovers' Lunch schema results](./img/bernies-schema.png) 
 
 **Quirks + Important Context** 
-- Forms are under client control; during development, 
+- Forms are under strict client control; during development, client allowed PG developer access via temporary credentials and screenshare as an acceptable workaround. 
 - Site is on `www` subdomain; in the first months after development some users (including client) came to an error page when trying to access the site on the bare domain. In December 2025 client IT added a redirect in client DNS settings which resolved the observed DNS issue. 
 
 
@@ -180,42 +180,44 @@ pw: bernies
 
 **Development URL:** https://carowpackagstg.wpenginepowered.com/
 
-**History + Status:** Site migrated from a HubSpot build to WordPress in (July 2024???). Enfold child theme build by erica dreisbach. 
+**History + Status:** Site migrated from a HubSpot build to WordPress in September 2024. Enfold child theme build by erica dreisbach. 
 
-**Hosting:** WP Engine
+**Hosting:** WP Engine https://my.wpengine.com/installs/carowpackaging
 
-**DNS:** ??? Client has ?? 
+**DNS:** Elena Bondarenko elena@paradigm-il.com
 
 **Analytics**
-- Google Analytics 
-- Google Tag Manager 
+- Google Analytics https://analytics.google.com/analytics/web/#/a267982792p375678185/reports/explorer?params=_u..nav%3Dmaui&ruid=875b9eda-240d-42e8-83e0-09b69fb38fd4&collectionId=10974198186&r=top-events
+- Google Tag Manager https://tagmanager.google.com/#/container/accounts/6248145653/containers/194582045/workspaces/22
 
 **Contacts**
-- Client: ??? 
-- PG Accounts: Mahek Lakhani mahek@peppergroup.com  
-- PG Tech Lead: 
-- PG Tech Backup:  
-- PG Design Lead: Joe Whittington joseph@peppergroup.com  
+- Client: Jenny DuPrey, Marketing Director jduprey@carowpackaging.com
+- Client 3rd Party IT: Elena Bondarenko elena@paradigm-il.com
+- Client 3rd Party CRM (Zoho): Manoj Manghnani manoj.manghnani@annexussolutions.com
+- PG Accounts: Mahek Lakhani mahek@peppergroup.com
+- PG Tech Lead: McCade Freeman mccade@peppergroup.com
+- PG Tech Backup: erica dreisbach erica@peppergroup.com
+- PG Design Lead: Joe Whittington joseph@peppergroup.com
 
 **Internal Project Assets**
-- Egnyte: 
-- Asana: 
+- Egnyte: https://peppergroup.egnyte.com/fl/B8GQTqPRkGRh/24-CAROW-4921_Website_ 
+- Asana: https://app.asana.com/1/1166973237627545/project/1206780371875574/list/1206780373752256
 
 **Repositories**
-- Production: 
-- Staging: 
-- Github: 
+- Production: git@git.wpengine.com:carowpackaging.git
+- Staging: git@git.wpengine.com:carowpackagstg.git
+- Github: git@github.com:PepperGroup/carow2024.git
 
 **Tech Stack Notes** 
 - Uses Essential Grid for blog posts and products 
-- Uses Google reCAPTCHA v3 to secure the site at large
-- Forms built with Gravity Forms
+- Uses Google reCAPTCHA v2 invisible to secure the site https://www.google.com/recaptcha/admin/site/707930137
+- Forms built with Gravity Forms and secured with reCAPTCHA vw
 
 **Recurring Tasks**
 - Site receives monthly maintenance from PG
 
 **Known Issues / Tech Debt**
-- Product sorting is unfortunately limited to a blanket AND or OR Boolean logic, which makes for confusing UI. Essential 
+- Resource sorting via Essential Grid is unfortunately limited to a blanket AND or OR Boolean logic, which makes for confusing UI. https://carowpackaging.com/resources/ 
 - At some browser heights, top frame cuts off Google reCAPTCHA badge in the lower right corner; screenshot below from Chrome on a retina Mac, 1692 pixels high: 
 
 ![Google reCAPTCHA badge cut off on some desktop viewports](./img/carow-recaptcha-badge-cut-off.png)
@@ -233,91 +235,96 @@ pw: bernies
 
 **Development URL:** https://californiaspe2.wpenginepowered.com/
 
-**History + Status:** Inherited build using Divi and assorted Divi add-ons. Significant pushes toward improving accessibility and UI in ____ and ____. 
+**History + Status:** Inherited build using Divi and assorted Divi add-ons. Significant PG development efforts toward improving accessibility and UI in October 2025. 
 
-**Hosting:** WP Engine 
+**Hosting:** WP Engine https://my.wpengine.com/installs/californiaspe1
 
 **DNS:** Client has access. 
 
 **Analytics**
--
--
+- Google Tag Manager https://tagmanager.google.com/#/container/accounts/6293029069/containers/218873956/workspaces/4 
+- Google Analytics https://analytics.google.com/analytics/web/#/a355728060p489866551/reports/intelligenthome?params=_u..nav%3Dmaui%26_u.dateOption%3DyearToDate&collectionId=user
 
 **Contacts**
-- Client: Brittany ____ 
+- Client: Brittany Lett Brittany.Lett@csprx.com 
 - PG Accounts: Eliza Uhland eliza@peppergroup.com 
-- PG Tech Lead:
-- PG Tech Backup:  
-- PG Design Lead: 
+- PG Tech Lead: McCade Freeman mccade@peppergroup.com 
 
 **Internal Project Assets**
-- Egnyte
-- Asana
+- Asana accessibility task - August 2025 - https://app.asana.com/1/1166973237627545/project/1166973102232817/task/1210978229802552?focus=true 
+- Asana site improvement task - October 2025 https://app.asana.com/1/1166973237627545/project/1166973102232817/task/1211210078647171?focus=true 
 
 **Repositories**
-- Production
-- Staging
-- Github
+- Production git@git.wpengine.com:californiaspe1.git
+- Development git@git.wpengine.com:californiasp3.git
+- Github git@github.com:PepperGroup/csprx.git
 
 **Tech Stack Notes** 
-- 
-
-**Recurring Tasks**
-- 
+- Uses Elementor theme, Elementor Pro plugin, and The Plus Addons for Elementor.
+- Uses Gravity Forms 
+- accessiBe widget added in the WordPress back end under **Custom CSS & JS > accessibe** with additional CSS customzation in `customify-child/header.php` 
+- OneTrust cookie widget and additional CSS customization added in `customify-child/header.php` 
 
 **Known Issues / Tech Debt**
-- 
+- Site is a highly-customized inherited build
 
 **Quirks + Important Context** 
-- Client has a history of running third-party tech reports (Screaming Frog report run by a firm called Taco, accessiBe accessibility reports) that are then sent to PG as a punchlist for site updates 
-- Site has a standalone Envoy portal airgapped from the WordPress build, used for sensitive individual patient and provider logins https://portal.csprx.com/login/ 
+- Client has a history of running third-party tech reports (Screaming Frog report run by Taco, accessiBe accessibility reports) that are then sent to PG as a punchlist for site updates 
+- Site has a standalone Envoy portal airgapped from the WordPress build, used for sensitive individual patient and provider logins: https://portal.csprx.com/login/ 
+- Edit Footer under **Elementor > Editor > Templates > Footer Live** - <a href="https://csprx.com/wp-admin/post.php?post=13&action=elementor" target="_blank" rel="noopener">direct link</a>
 
 
 ## DeliverHealth 
 
 <img src="./img/deliverhealth-home.png" style="margin-bottom: 1.414rem;">
 
-**URL:** https://deliverhealth.com/esone-instanote/ 
+**Landing Page URL:** https://deliverhealth.com/esone-instanote/ 
 
-**Development URL:** https://ai.deliverhealth.com/ 
+**Main Site URL:** https://ai.deliverhealth.com/ 
 
-**History + Status:** In ____ PG developed a handful of lovely landing pages on client's WordPress site using Gravity Forms and Calendly. In ___ Client transitioned nearly all site content to an AI-generated build on Lovable.  
+**Legacy Site URL:** https://staging-htech.deliverhealth.com/
 
-**Hosting:**  ???
+**History + Status:** In July 2024 PG developed a handful of landing pages on client's WordPress site using Gravity Forms and Calendly. In November 2025 Client transitioned nearly all site content to an AI-generated build on Lovable.  
+
+**Hosting:** Lovable site hosted on [??]; Legacy WordPress site hosted on SiteGround and managed by Hagadonetech 
 
 **DNS:** Client has access 
 
 **Analytics**
-- Google Analytics 
+- Google Analytics https://analytics.google.com/analytics/web/#/a212024374p379520509/reports/intelligenthome?params=_u..nav%3Dmaui%26_u.dateOption%3DyearToDate&collectionId=user 
 - Google AdSense (SEO team has access)
 
 **Contacts**
-- Client: 
+- Client: Andrea Schlosser andrea.schlosser@deliverhealth.com
 - PG Accounts: Eliza Uhland eliza@peppergroup.com  
-- PG Tech Lead:
-- PG Tech Backup:  
-- Legacy Tech: Ben @ Hagonetech 
+- PG Tech Lead: McCade Freman mccade@peppergroup.com
+- Legacy Tech: Ben @ Hagonetech bmcgaughey@hagadonetech.com
 
 **Internal Project Assets**
-- Egnyte
-- Asana
+- Egnyte - WordPress Landing Pages https://peppergroup.egnyte.com/fl/BpfTPwT3ktJg/24-DeliverHealth-4910_Lead_Gen_Campaign_Setup%2C_Landing_Page_Development_and_Launch_
+- Asana - WordPress Landing Pages https://app.asana.com/1/1166973237627545/task/1207817363353346?focus=true
 
 **Repositories**
-- Production
-- Staging
-- Github
+- Github git@github.com:PepperGroup/deliverhealth.git
 
 **Tech Stack Notes** 
-- 
+- WordPress landing pages use Calendly links
+- WordPress forms built with WP Forms secured with reCAPTCHA v3 https://www.google.com/recaptcha/admin/site/729642121 
+- Forms additionally secured with Antideo Email Validator, used in the build to bar disposible emails
+- Form notifications passed to client via Resend - client has access
 
 **Recurring Tasks**
-- 
+- N/A
 
 **Known Issues / Tech Debt**
 - 
 
 **Quirks + Important Context** 
-- If working on the Lovable site, beware using 
+- If working on the Lovable site, beware applying AI-suggested security updates; Lovable's suggested and optional security updates have had unintended negative consequences throughout the build
+
+
+
+
 
 
 ## EnviroServe 
@@ -330,24 +337,25 @@ pw: bernies
 un: enviroservedev<br>
 pw: enviroservedev
 
-**History + Status:** 
+**History + Status:**  Site refresh launched August 2024 from an earlier PG-built WordPress site. Enfold child theme build by erica dreisbach.
 
 **Hosting:** WP Engine https://my.wpengine.com/installs/enviroserve
 
 **Analytics**
-- Google Analytics 
--
+- Google Analytics https://analytics.google.com/analytics/web/#/a90456084p308273251/reports/intelligenthome?params=_u..nav%3Dmaui%26_u.dateOption%3DyearToDate&collectionId=user
+- Google Tag Manager https://tagmanager.google.com/#/container/accounts/6000882334/containers/31020874/workspaces/41 **NOTE:** use &ldquo;EnviroServe&rdquo; Google Tag Manager container, not &ldquo;Enviroserve New&rdquo;
+- Google Search Console https://search.google.com/search-console?resource_id=https%3A%2F%2Fenviroserve.com%2F
 
 **Contacts**
-- Client: _____???? 
+- Client: [ ?? ]
 - PG Accounts: Miranda Steczak miranda@peppergroup.com
 - PG Tech Lead: erica dreisbach erica@peppergroup.com 
 - PG Tech Backup: McCade Freeman mccade@peppergroup.com 
 - PG Design Lead: co-designed by Brian Erickson brian@peppergroup.com and Joe Whittington joseph@peppergroup.com 
 
 **Internal Project Assets**
-- Egnyte
-- Asana
+- Egnyte https://peppergroup.egnyte.com/app/index.do#storage/files/1/Shared/Documents/Clients%20-%20Active/ENVIROSERVE/24-EnviroServe-4852_Website%20Development
+- Asana https://app.asana.com/1/1166973237627545/project/1206302832312227/list/1206303617257602
 
 **Repositories**
 - Production
@@ -361,12 +369,19 @@ pw: enviroservedev
 - Receives monthly site maintenace. 
 
 **Known Issues / Tech Debt**
-- This site, alone among known PG sites to date, required special attention to Google Analytics in order to properly trigger pageviews. Google Analytics Pageviews from the August 2024 launch through ____ are lost. Specialty JavaScript to manually ensure pageview event is triggered included in _____. 
+- Services hotspot module should be updated to dismiss pop-ups with keyboard Escape key https://enviroserve.com/services/
+- This site, alone among known PG sites to date, required special attention to Google Analytics in order to properly trigger pageviews. Google Analytics Pageviews from the August 2024 launch through March 2025 are null. The build includes specialized JavaScript to manually ensure pageview event. 
+- Some web traffic information is recoverable from the WP Engine dashboard 
 - Google Maps on Locations page connected to a non-PG Google account; unclear if this is client's Google account or a prior developer's. Map views as of December 2025 are well below the threshold that would trigger payment. 
 
 **Quirks + Important Context** 
-- The legacy EnviroServe automatically generated coordinates for new locations upon entering into the page editor. The redesigned site as of 2024 requires manual entry of location coordinates, which can be readily pulled from Google Maps. 
-- Client uses a third-party service LocalIQ to improve engagement. LocalIQ's widget is added in _____. 
+- The legacy EnviroServe site automatically generated coordinates for new locations upon entering into the page editor. The redesigned site as of 2024 requires manual entry of location coordinates, which can be readily pulled from Google Maps. 
+- Client uses a third-party service LocalIQ to improve engagement.
+
+
+
+
+
 
 
 
@@ -411,53 +426,59 @@ pw: enviroservedev
 
 # <a id="japs-olson"></a>JO / Japs-Olson 
 
+
+
+
 # <a id="kensing"></a>Kensing Solutions 
 
-<img src="./img/bernies-home.png" style="margin-bottom: 1.414rem;">
+<img src="./img/kensing-home.png" style="margin-bottom: 1.414rem;">
 
-**URL:**
+**URL:** https://kensingsolutions.com/ 
 
-**Development URL:** 
+**Test URL:** https://test-kensing-com.pantheonsite.io/ 
+un: kensing
+pw: kensing
+
+**Development URL:** https://dev-kensing-com.pantheonsite.io/
+un: kensing
+pw: kensing
 
 **History + Status:** 
 
-**Hosting:** 
+**Hosting:** Pantheon 
 
-**DNS:** 
+**DNS:** [??}
 
 **Analytics**
--
--
+- Google Analytics https://analytics.google.com/analytics/web/#/a193582090p347642779/reports/explorer?params=_u..nav%3Dmaui%26_u.dateOption%3DyearToDate&collectionId=11080460104&r=all-pages-and-screens&ruid=99e2c496-b8be-430d-a3de-3fa1780a7179
+- Google Tag Manager https://tagmanager.google.com/#/container/accounts/6004307023/containers/47947917/workspaces/5
+- Google Search Console https://search.google.com/search-console?resource_id=https%3A%2F%2Fkensingsolutions.com%2F
 
 **Contacts**
-- Client: 
-- PG Accounts: 
-- PG Tech Lead:
-- PG Tech Backup:  
-- PG Design Lead: 
-
-**Internal Project Assets**
-- Egnyte
-- Asana
+- Client: Eva Criado eva.criado@kensingsolutions.com
+- PG Accounts: Eliza Uhland eliza@peppergroup.com 
+- PG Tech Lead: McCade Freeman mccade@pappergroup.com 
 
 **Repositories**
-- Production
-- Staging
-- Github
+- Pantheon  ssh://codeserver.dev.6bca8971-d76a-4cf4-82f3-ed209d138943@codeserver.dev.6bca8971-d76a-4cf4-82f3-ed209d138943.drush.in:2222/~/repository.git
+- Github git@github.com:PepperGroup/kensing.git
 
 **Tech Stack Notes** 
-- 
+- Uses Essential Grid to power News and Events page https://kensingsolutions.com/about/news-and-events/ 
+- Uses Ultimate Member to manage Customer Portal registrations and access to proprietary content
+- Significant mainland China userbase prevents use of Google reCAPTCHA to secure forms; MT Captcha used instead and connected to Ultimate Member via custom plugin 
 
 **Recurring Tasks**
 - Site receives monthly maintenance from PG, including a screenshot of login activity from the MT Captcha dashboard. Most months see around 270-300 successful logins and 15-20 unsuccessful logins. Significantly more or less activity could be a sign of an emergent issue with site traffic and/or security. 
 
 **Known Issues / Tech Debt**
 - Client has a significant user base in mainland China, where Google reCAPTCHA does not work. MT Captcha added in November 2024 to secure Member Portal content WordPress back end, and hacked onto the Ultimate Member plugin with a combination of the  **Theme My Login** plugin (secures admin and customer login forms) and a fork from the **MT Captcha** plugin (secures the Ultimate Member registration form). Periodic manual review of custom code involved is strongly advised. 
-- Thank You page included in `sitemap.xml`; adjust settings in Yoast to hide from search and avoid polluting analytics data
-
+- Thank You page is included in `sitemap.xml`; adjust settings in Yoast to hide from search and avoid polluting conversion analytics data with inadvertant bot or user traffic 
+- Navigation font is incorrect on portal pages (Barlow Condensed instead of correct Montserrat)<br>
+<img src="./img/kensing-portal-nav.jpg">
 
 **Quirks + Important Context** 
-- 
+- As of late 2025, Ultimate Member seems to no longer allow email addresses using `+` for uniqueness. Adjusting or updating the websites+subscriber@peppergroup.com Subscriber account used for testing can still be done with use of command line mySql access. 
 
 
 
@@ -468,25 +489,25 @@ pw: enviroservedev
 
 # Robertshaw
 
-**URL:**
+**URL:** https://www.robertshaw.com/
 
-**Staging URL:** 
+**Staging URL:** https://robertshawstg.wpenginepowered.com/ 
 
-**Development URL:** 
+**Development URL:** https://robertshawstg.wpenginepowered.com/ 
 
-**History + Status:** 
+**History + Status:** High-traffic large-footprint WordPress site launched March 2025. Enfold child theme built by erica dreisbach. Support for Find a Distributor and Competitor Cross-Reference tools from Brian Royer. 
 
 **Hosting:** WP Engine - https://my.wpengine.com/installs/robertshaw1 
 
-**DNS:** 
+**DNS:** CSC Corporate Domains - client has access
 
 **Analytics**
 -
--
+- Google Tag Manager https://tagmanager.google.com/#/container/accounts/4243101562/containers/10076276/workspaces/94 **NOTE:** Use Robertshaw container, *not* Robertshaw 2025
 
 **Contacts**
-- Client: ____ 
-- Client Technical Contact: Octavio 
+- Client: Katie Kretschmar katie.kretschmar@robertshaw.com
+- Client Technical Contact: Octavio Gomez octavio.gomez@robertshaw.com
 - PG Accounts: Grace Rodi grace@peppergroup.com 
 - PG Tech Lead: erica dreisbach erica@peppergroup.com 
 - Additional Tech: Brian Royer brian@soundwebmedia.com 
@@ -494,13 +515,14 @@ pw: enviroservedev
 - PG Design Lead: Brian Erickson brian@peppergroup.com 
 
 **Internal Project Assets**
-- Egnyte
-- Asana
+- Egnyte https://peppergroup.egnyte.com/app/index.do#storage/files/1/Shared/Documents/Clients%20-%20Active/ROBERTSHAW/24-Robertshaw-4965_Website
+- Asana https://app.asana.com/1/1166973237627545/project/1207718594991922/list/1207718948383558
 
 **Repositories**
-- Production
-- Staging
-- Github
+- Production git@git.wpengine.com:robertshaw1.git
+- Staging git@git.wpengine.com:robertshawstg.git
+- Development git@git.wpengine.com:robertshawdev.git
+- Github git@github.com:PepperGroup/robertshaw.git
 
 **Tech Stack Notes** 
 - The main contact form is an HTML widget connected directly to client's SalesForce CRM
@@ -512,10 +534,66 @@ pw: enviroservedev
 - Receives monthly site maintenance 
 
 **Known Issues / Tech Debt**
-- Main contact form does not properly validate reCAPTCHA responses 
+- Main contact form does not properly validate reCAPTCHA responses https://robertshaw.com/contact https://www.google.com/recaptcha/admin/site/720940655 
+
+**Quirks + Important Context** 
+- Find a Distributor https://www.robertshaw.com/distributor-locator/ and Competitor Cross-Reference https://www.robertshaw.com/competitor-cross-reference/ are updated via Google Sheets accessible in the WordPress back end when logged in to Google as pepperanalytics@gmail.com 
+
+
+
+
+# <a id="scheblerspecfab"></a>Schebler Spec Fab
+
+<img src="./img/scheblerspecfab-home.png" style="margin-bottom: 1.414rem;">
+
+**URL:** https://scheblerspecfab.com/
+
+**Development URL:** https://staging.scheblerspecfab.com/ 
+
+**History + Status:** 
+Site inherited from a third-party build (Valve and Meter?) using Gutenberg and Timber. Significant efforts in January 2026 to bring style in-line with Enfold builds created by Pepper Group on https://schebler.com/ and https://scheblerchimney.com/. 
+
+**Hosting:** NexCess _____
+ 
+**DNS:** GoDaddy ____ 
+
+**Analytics**
+-
+-
+
+**Contacts**
+- Client: Matt ____ 
+- Legacy 3rd Party Tech: Nathan Allan https://valveandmeter.com/
+- PG Accounts: Mahek Lakhani mahek@peppergroup.com 
+- PG Tech Lead: Todd Underwood todd@peppergroup.com 
+- PG Tech Backup:  
+
+**Internal Project Assets**
+- Egnyte
+- Asana
+
+**Repositories**
+- Production
+- Staging
+- Github
+
+**Tech Stack Notes** 
+- Site built with Gutenberg / Timber 
+
+**Recurring Tasks**
+- Monthly WordPress site maintenance (plugin updates, tech stack checks, SEO checks).  
+
+**Known Issues / Tech Debt**
+- Hard-coded homepage template (??) in `/homepage-2025.php` 
+- Orphaned CSS files ... integrate with `/assets/css/theme.css` ?
+    - `/assets/css/homepage-2025.css`  
+    - `/assets/css/contact.css`
 
 **Quirks + Important Context** 
 - 
+
+
+
 
 
 # Sensience 
@@ -585,6 +663,8 @@ pw: enviroservedev
 ## <a id="pharmalogistics"></a>PharmaLogistics 
 
 ## RTMec
+
+https://my.wpengine.com/installs/rtmengineering
 
 ## TIGRIS
 
